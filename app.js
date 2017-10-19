@@ -120,19 +120,25 @@ alert(list + '.');
 THIS is the end of that mishap*/
 
 //Question 7
+function questions(textofquestion) {
+  var answer = prompt(textofquestion);
+  console.log('answer', answer);
+  return answer;
+}
+
+
 var flag;
 var correct = 0;
 var guesses = 0;
 var food = ['beer', 'pizza', 'sandwiches', 'mocha', 'cake', 'steak'];
 
 while(guesses < 6) {
-  var answer = prompt('What foods or drinks preserve my mental health?');
+  var answer = questions('What is my favorite food?');
   answer = answer.toLowerCase();
   guesses++;
   console.log('Number of guesses:', guesses);
-  console.log('Guessed: ', answer);
+  //console.log('Guessed: ', answer);
   flag = false;
-
   for (var i = 0 ; i < food.length ; i++) {
     if (answer === food[i]) {
       alert('Nice Guess! High-Five!');
@@ -140,7 +146,6 @@ while(guesses < 6) {
       flag = true;
     }
   }
-
   if(flag === false) {
     alert('Nope.');
   }
